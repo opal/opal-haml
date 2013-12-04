@@ -2,6 +2,44 @@
 
 Haml templates for opal
 
+## Usage
+
+Add opal-haml to your `Gemfile`:
+
+```ruby
+gem 'opal-haml', :github => 'opal/opal-haml'
+```
+
+Create a haml file in the opal load path (e.g. `app/user_template.haml`):
+
+```haml
+.row
+  .col-md-6
+    = self.name
+  .col-md-6
+    = self.age
+```
+
+Render the haml template:
+
+```ruby
+# app/application.rb
+require 'user_template'
+
+class User
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name, @age = name age
+  end
+end
+
+user = User.new('Ford Perfect', 42)
+html = Template['user_template'].render(user)
+puts html
+# => <div class="row">...</div>
+```
+
 ## Running tests
 
 Get dependencies:
