@@ -24,5 +24,4 @@ module Opal
   end
 end
 
-Tilt.register 'opalhaml',               Opal::Haml::Processor
-Sprockets.register_engine '.opalhaml',  Opal::Haml::Processor
+Sprockets.register_engine '.haml',  Opal::Haml::Processor
