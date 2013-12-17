@@ -1,5 +1,5 @@
 require 'haml'
-require 'opal-sprockets'
+require 'sprockets'
 
 module Opal
   module Haml
