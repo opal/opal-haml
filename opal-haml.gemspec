@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.author       = 'Adam Beynon'
   s.email        = 'adam@adambeynon.com'
   s.homepage     = 'http://opalrb.org'
-  s.summary      = '.'
-  s.description  = '..'
+  s.summary      = 'Run Haml templates client-side with Opal'
+  s.description  = 'Run Haml templates client-side with Opal.'
   s.license      = 'MIT'
 
   s.files          = `git ls-files`.split("\n")
@@ -17,8 +17,7 @@ Gem::Specification.new do |s|
   s.test_files     = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths  = ['lib']
 
-  s.add_dependency 'opal', '~> 0.5.0'
-  s.add_dependency 'opal-sprockets'
+  s.add_dependency 'opal', ['>= 0.5.0', '< 1.0.0']
   s.add_dependency 'haml'
 
   s.add_development_dependency 'opal-rspec', '>= 0.2.1'
