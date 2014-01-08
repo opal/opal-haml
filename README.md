@@ -1,6 +1,19 @@
-# opal-haml
+# opal-haml: Haml templates for opal
 
-Haml templates for opal
+This gem adds `.haml` files to sprockets to precompile templates for opal. This
+gem does not make the haml compiler available under opal, just the result of
+pre-compiling a haml template.
+
+A small runtime is included to handle dynamic attributes, as well as allowing
+content to be rendered.
+
+All haml templates become available under the `Template` constant in Opal,
+which allows a template to be easily rendered in a context:
+
+```ruby
+Template['user'].render(my_user)
+# => <div>..</div>
+```
 
 ## Usage
 
