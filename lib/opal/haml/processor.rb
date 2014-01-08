@@ -17,8 +17,9 @@ module Opal
       def prepare
       end
 
-      def evaluate(scope, locals, &block)
-        Opal::Haml.compile data, scope.logical_path.sub(/^templates\//, '')
+      def evaluate(context, locals, &block)
+        context.require_asset 'opal-haml'
+        Opal::Haml.compile data, context.logical_path.sub(/^templates\//, '')
       end
     end
   end
