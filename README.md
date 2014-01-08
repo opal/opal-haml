@@ -30,11 +30,11 @@ class User
   attr_accessor :name, :age
 
   def initialize(name, age)
-    @name, @age = name age
+    @name, @age = name, age
   end
 end
 
-user = User.new('Ford Perfect', 42)
+user = User.new('Ford Prefect', 42)
 html = Template['user_template'].render(user)
 puts html
 # => <div class="row">...</div>
