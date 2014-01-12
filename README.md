@@ -67,6 +67,12 @@ Run tests using opal-rspec:
 $ bundle exec rake
 ```
 
+Run specs in the browser:
+
+```
+$ bundle exec rackup
+```
+
 ## License
 
 (The MIT License)
