@@ -2,6 +2,8 @@
 
 *   Implicitly require `opal-haml` when any haml template is required
 
+*   Cleanup generated code to be use Opal ERB runtime directly
+
 ## 0.2.0 2013-12-17
 
 *   Remove opal-sprockets dependency

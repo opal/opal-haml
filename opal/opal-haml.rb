@@ -2,10 +2,6 @@ require 'template'
 
 class Template
   class OutputBuffer
-    def buffer
-      self
-    end
-
     alias << append
 
     # allow tags in haml to have dynamic attributes
