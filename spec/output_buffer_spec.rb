@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'template'
 
 describe Template::OutputBuffer do

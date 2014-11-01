@@ -1,3 +1,4 @@
+require 'spec_helper'
 require File.expand_path('../simple', __FILE__)
 require File.expand_path('../advanced', __FILE__)
 require File.expand_path('../html_content', __FILE__)
