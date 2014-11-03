@@ -1,4 +1,5 @@
 require 'opal'
+require 'opal/haml/builder'
 require 'opal/haml/processor'
 require 'opal/haml/version'
 

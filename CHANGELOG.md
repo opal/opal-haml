@@ -1,5 +1,7 @@
 ## edge
 
+*   Add support for new opal Builder processors.
+
 *   Implicitly require `opal-haml` when any haml template is required
 
 *   Cleanup generated code to be use Opal ERB runtime directly
