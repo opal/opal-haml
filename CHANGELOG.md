@@ -1,4 +1,4 @@
-## edge
+## 0.3.0 2015-02-03
 
 *   Add support for new opal Builder processors.
 
