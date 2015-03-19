@@ -13,6 +13,7 @@ module Opal
 
     def self.wrap(haml, file)
       <<-EOS
+        require 'opal-haml'
         Template.new('#{file}') do |_hamlout|
           #{haml}
           _hamlout.join
