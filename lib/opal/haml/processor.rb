@@ -3,23 +3,15 @@ require 'sprockets'
 
 module Opal
   module Haml
-    class Processor < Tilt::Template
-      self.default_mime_type = 'application/javascript'
-
-      def self.engine_initialized?
-        true
-      end
-
-      def initialize_engine
-        require_template_library 'opal'
-      end
-
-      def prepare
-      end
-
+    class Processor < ::Opal::Processor
       def evaluate(context, locals, &block)
-        context.require_asset 'opal-haml'
-        Opal::Haml.compile data, context.logical_path.sub(/^templates\//, '')
+        @data = Opal::Haml.compile_haml @data, context.logical_path.sub(/^templates\//, '')
+        super
+      end
+
+      def self.compiler_options
+        # otherwise would check current class `attr_accessor`s
+        ::Opal::Processor.compiler_options
       end
     end
   end
