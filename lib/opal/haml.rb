@@ -6,9 +6,13 @@ require 'opal/haml/version'
 module Opal
   module Haml
     def self.compile(source, file = '(haml)')
+      Opal.compile(compile_haml(source, file))
+    end
+
+    def self.compile_haml(source, file)
       haml = ::Haml::Engine.new(source, :ugly => true).precompiled
       haml = haml.gsub('_hamlout.buffer', '_hamlout')
-      Opal.compile(wrap(haml, file))
+      wrap(haml, file)
     end
 
     def self.wrap(haml, file)
