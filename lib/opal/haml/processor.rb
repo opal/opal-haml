@@ -4,6 +4,8 @@ require 'sprockets'
 module Opal
   module Haml
     class Processor < ::Opal::Processor
+      self.default_mime_type = 'application/javascript'
+
       def evaluate(context, locals, &block)
         @data = Opal::Haml.compile_haml @data, context.logical_path.sub(/^templates\//, '')
         super
