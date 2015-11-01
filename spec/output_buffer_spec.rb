@@ -18,8 +18,18 @@ describe Template::OutputBuffer do
       expect(result).to include("data-another='one'")
     end
 
+    it "escapes attribute values" do
+      result = attributes(foo: 'a<>&"\'b')
+      expect(result).to include("foo='a&lt;&gt;&amp;&quot;&apos;b'")
+    end
+
     it "skips the attribute for false values" do
       result = attributes(name: false)
+      expect(result).to_not include('name')
+    end
+
+    it "skips the attribute for nil values" do
+      result = attributes(name: nil)
       expect(result).to_not include('name')
     end
 
