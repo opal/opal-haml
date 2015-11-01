@@ -12,6 +12,12 @@ describe Template::OutputBuffer do
       expect(result).to include("name='foo'", "height='100'")
     end
 
+    it "can compile nested attributes" do
+      result = attributes(data: { foo: { bar: 'baz' }, another: 'one' })
+      expect(result).to include("data-foo-bar='baz'")
+      expect(result).to include("data-another='one'")
+    end
+
     it "skips the attribute for false values" do
       result = attributes(name: false)
       expect(result).to_not include('name')
