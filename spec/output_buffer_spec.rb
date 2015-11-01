@@ -24,6 +24,11 @@ describe Template::OutputBuffer do
       expect(result).to include("data='baz'")
     end
 
+    it "removes nil from arrays" do
+      result = attributes(foo: [ 'bar', nil, 'baz' ])
+      expect(result).to include("foo='bar baz'")
+    end
+
     it "escapes attribute values" do
       result = attributes(foo: 'a<>&"\'b')
       expect(result).to include("foo='a&lt;&gt;&amp;&quot;&apos;b'")
