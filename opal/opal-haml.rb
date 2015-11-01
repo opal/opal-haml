@@ -9,7 +9,9 @@ class Template
       attributes = class_id
 
       attributes_hashes.each do |hash|
-        attributes.update hash
+        attributes.update hash do |_, oldval, newval|
+          Array(oldval) + Array(newval)
+        end
       end
 
       result = []
@@ -29,6 +31,7 @@ class Template
         when false, nil then next
         when Hash then _render_attributes(value, out, attr_name + '-')
         else
+          value = value.join ' ' if value.is_a? Array
           out << " #{attr_name}='#{_attribute_escape value}'"
         end
       end
