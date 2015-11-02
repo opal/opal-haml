@@ -12,8 +12,35 @@ describe Template::OutputBuffer do
       expect(result).to include("name='foo'", "height='100'")
     end
 
+    it "can compile nested attributes" do
+      result = attributes(data: { foo: { bar: 'baz' }, another: 'one' })
+      expect(result).to include("data-foo-bar='baz'")
+      expect(result).to include("data-another='one'")
+    end
+
+    it "combines input hashes" do
+      result = subject.attributes({ 'class' => 'foo' }, nil, { class: 'bar', data: 'baz' })
+      expect(result).to include("class='foo bar'")
+      expect(result).to include("data='baz'")
+    end
+
+    it "removes nil from arrays" do
+      result = attributes(foo: [ 'bar', nil, 'baz' ])
+      expect(result).to include("foo='bar baz'")
+    end
+
+    it "escapes attribute values" do
+      result = attributes(foo: 'a<>&"\'b')
+      expect(result).to include("foo='a&lt;&gt;&amp;&quot;&apos;b'")
+    end
+
     it "skips the attribute for false values" do
       result = attributes(name: false)
+      expect(result).to_not include('name')
+    end
+
+    it "skips the attribute for nil values" do
+      result = attributes(name: nil)
       expect(result).to_not include('name')
     end
 
