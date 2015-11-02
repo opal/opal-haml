@@ -1,4 +1,10 @@
-## 0.3.0 2015-08-07
+## 0.4.1 2015-11-02
+
+*   Add support for nested attribute hashes: `%div{ data: { foo: 123 } }` now becomes `<div data-foo="123"></div>`.
+
+*   Attribute values are now properly escaped.
+
+## 0.4.0 2015-08-07
 
 *   Add support for Opal 0.8.
 
