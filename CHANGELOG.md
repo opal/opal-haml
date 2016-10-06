@@ -1,3 +1,5 @@
+## 0.4.2 2016-10-06
+
 *   Avoid Sprockets v3.7 deprecations
 
 ## 0.4.1 2015-11-02
