@@ -1,3 +1,5 @@
+*   Avoid Sprockets v3.7 deprecations
+
 ## 0.4.1 2015-11-02
 
 *   Add support for nested attribute hashes: `%div{ data: { foo: 123 } }` now becomes `<div data-foo="123"></div>`.

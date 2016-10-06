@@ -19,4 +19,10 @@ module Opal
   end
 end
 
-Sprockets.register_engine '.haml',  Opal::Haml::Processor
+if Sprockets.respond_to? :register_transformer
+  extra_args = [{mime_type: 'application/javascript', silence_deprecation: true}]
+else
+  extra_args = []
+end
+
+Sprockets.register_engine '.haml', Opal::Haml::Processor, *extra_args
