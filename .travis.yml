@@ -1,0 +1,23 @@
+language: ruby
+sudo: false
+rvm: 2.3.1
+
+cache:
+  bundler: true
+  directories:
+  - node_modules
+  - phantom20
+
+before_install:
+  # Attempt to work around Travis issues and Ruby 2.3 - https://github.com/vcr/vcr/issues/582
+  - gem update --system
+  - "mkdir -p phantom20"
+  - "export PATH=`pwd`/phantom20:$PATH"
+  - "echo $PATH"
+  - "pushd phantom20"
+  - "ls phantomjs || curl -L -O https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2"
+  - "ls phantomjs || tar xjvf phantomjs-2.0.0-ubuntu-12.04.tar.bz2"
+  - "rm -rf phantomjs-2.0.0-ubuntu-12.04.tar.bz2"
+  - "popd"
+
+
