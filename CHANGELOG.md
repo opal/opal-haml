@@ -1,3 +1,7 @@
+## 0.4.3 2017-05-02
+
+*   Add support for Haml v5.0
+
 ## 0.4.2 2016-10-06
 
 *   Avoid Sprockets v3.7 deprecations

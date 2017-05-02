@@ -1,5 +1,7 @@
 # opal-haml: Haml templates for opal
 
+[![Build Status](https://travis-ci.org/opal/opal-haml.svg?branch=master)](https://travis-ci.org/opal/opal-haml)
+
 This gem adds `.haml` files to sprockets to precompile templates for opal. This
 gem does not make the haml compiler available under opal, just the result of
 pre-compiling a haml template.
@@ -20,7 +22,7 @@ Template['user'].render(my_user)
 Add opal-haml to your `Gemfile`:
 
 ```ruby
-gem 'opal-haml', :github => 'opal/opal-haml'
+gem 'opal-haml'
 ```
 
 Create a haml file in the opal load path (e.g. `app/user_template.haml`):
