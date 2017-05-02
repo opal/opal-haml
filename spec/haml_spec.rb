@@ -19,7 +19,10 @@ describe "Haml files" do
   it "accepts a context to render template with" do
     @haml_message = "hello world"
     expect(advanced.render(self)).to include('hello world')
-    expect(advanced.render(self)).to eq(%{hello world<a bar='baz' href='#' foo='123' quz='1134'>foofoofoo</a>})
+    expect([
+      %{hello world<a bar='baz' href='#' foo='123' quz='1134'>foofoofoo</a>}, # haml 4
+      %{hello world<a bar='baz' foo='123' href='#' quz='1134'>foofoofoo</a>}, # haml 5
+    ]).to include(advanced.render(self))
   end
 
   it "generates html with a given context" do
