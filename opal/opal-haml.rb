@@ -1,5 +1,34 @@
 require 'template'
 
+module Haml
+  module Buffer
+    def rstrip!
+      self
+    end
+  end
+
+  module Helpers
+    def self.html_escape(string)
+      # http://stackoverflow.com/a/9756789
+      %x{
+        return ('' + string) /* Forces the conversion to string. */
+            .replace(/&/g, '&amp;') /* This MUST be the 1st replacement. */
+            .replace(/'/g, '&apos;') /* The 4 other predefined entities, required. */
+            .replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            /*
+            You may add other replacements here for HTML only
+            (but it's not necessary).
+            Or for XML, only if the named entities are defined in its DTD.
+            */
+            .replace(/\r\n/g, '&#13;') /* Must be before the next replacement. */
+            .replace(/[\r\n]/g, '&#13;');
+      }
+    end
+  end
+end
+
 class Template
   class OutputBuffer
     alias << append

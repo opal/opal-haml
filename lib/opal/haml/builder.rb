@@ -15,10 +15,7 @@ module Opal
       end
 
       def prepare(source, path)
-        haml = ::Haml::Engine.new(source, :ugly => true).precompiled
-        haml = haml.gsub('_hamlout.buffer', '_hamlout')
-
-        ::Opal::Haml.wrap haml, path
+        ::Opal::Haml.compile_haml(source, path)
       end
     end
   end
