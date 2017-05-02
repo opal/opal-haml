@@ -4,8 +4,10 @@ rvm: 2.3.4
 
 
 env:
-  - HAML_VERSION="~> 4.0"
-  - HAML_VERSION="~> 5.0"
+  - HAML_VERSION="~> 4.0" OPAL_VERSION='~> 0.10.0'
+  - HAML_VERSION="~> 5.0" OPAL_VERSION='~> 0.10.0'
+  - HAML_VERSION="~> 4.0" OPAL_VERSION='~> 0.11.0.rc1'
+  - HAML_VERSION="~> 5.0" OPAL_VERSION='~> 0.11.0.rc1'
 
 cache:
   bundler: true
