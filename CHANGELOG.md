@@ -1,3 +1,7 @@
+## 0.4.4 2017-05-13
+
+- Improve support for the attribute builder
+
 ## 0.4.3 2017-05-02
 
 - Add support for Haml v5.0
