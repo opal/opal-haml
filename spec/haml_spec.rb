@@ -5,6 +5,7 @@ describe "Haml files" do
   let(:simple)            { Template['fixtures/simple'] }
   let(:advanced)          { Template['fixtures/advanced'] }
   let(:html_content)      { Template['fixtures/html_content'] }
+  let(:attributes_helper) { Template['fixtures/attributes_helper'] }
 
   it "should be defined by filename on Template namespace" do
     expect(simple).to be_kind_of(Template)
@@ -26,5 +27,22 @@ describe "Haml files" do
   it "generates html with a given context" do
     @h1_content = 'Ford Perfect'
     expect(html_content.render(self)).to include('<h1>Ford Perfect</h1>')
+  end
+
+  it 'can generates attributes' do
+    require 'ostruct'
+    note = Struct.new(:name, :note_class)
+    @keyboard = OpenStruct.new(notes: [note.new(:C, :sharp), note.new(:F, :sharp)])
+    expect(attributes_helper.render(self)).to include(
+      "<div class='keyboard'>"+
+        "<div class='octave'>"+
+          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
+          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>F</div></div>"+
+        "</div><div class='octave'>"+
+          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
+          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>F</div></div>"+
+        "</div>"+
+      "</div>"
+    )
   end
 end

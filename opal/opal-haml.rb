@@ -1,4 +1,5 @@
 require 'template'
+require 'haml/attribute_builder'
 
 module Haml
   module Buffer
