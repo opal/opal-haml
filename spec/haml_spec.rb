@@ -1,12 +1,10 @@
 require 'spec_helper'
-require File.expand_path('../simple', __FILE__)
-require File.expand_path('../advanced', __FILE__)
-require File.expand_path('../html_content', __FILE__)
+require_tree './fixtures'
 
 describe "Haml files" do
-  let(:simple) { Template['simple'] }
-  let(:advanced) { Template['advanced'] }
-  let(:html_content) { Template['html_content'] }
+  let(:simple)            { Template['fixtures/simple'] }
+  let(:advanced)          { Template['fixtures/advanced'] }
+  let(:html_content)      { Template['fixtures/html_content'] }
 
   it "should be defined by filename on Template namespace" do
     expect(simple).to be_kind_of(Template)
