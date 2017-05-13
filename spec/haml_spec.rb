@@ -33,7 +33,7 @@ describe "Haml files" do
     require 'ostruct'
     note = Struct.new(:name, :note_class)
     @keyboard = OpenStruct.new(notes: [note.new(:C, :sharp), note.new(:F, :sharp)])
-    expect(attributes_helper.render(self)).to include(
+    expect([
       "<div class='keyboard'>"+
         "<div class='octave'>"+
           "<a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
@@ -42,7 +42,16 @@ describe "Haml files" do
           "<a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
           "<a class='4 key'></a><div class='key sharp'><div class='name'>F</div></div>"+
         "</div>"+
+      "</div>",
+      "<div class='keyboard'>"+
+        "<div class='octave'>"+
+          "<a class='key 4'></a><div class='key sharp'><div class='name'>C</div></div>"+
+          "<a class='key 4'></a><div class='key sharp'><div class='name'>F</div></div>"+
+        "</div><div class='octave'>"+
+          "<a class='key 4'></a><div class='key sharp'><div class='name'>C</div></div>"+
+          "<a class='key 4'></a><div class='key sharp'><div class='name'>F</div></div>"+
+        "</div>"+
       "</div>"
-    )
+    ]).to include(attributes_helper.render(self))
   end
 end
