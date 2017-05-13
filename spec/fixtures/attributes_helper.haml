@@ -2,7 +2,6 @@
   -2.times do
     .octave
       -@keyboard.notes.each do |note|
-        %a(class="#{2+2} key")
         %a.key(class="#{2+2}")
         .key{class: "#{note.note_class}"}
           .name= note.name

@@ -36,11 +36,11 @@ describe "Haml files" do
     expect(attributes_helper.render(self)).to include(
       "<div class='keyboard'>"+
         "<div class='octave'>"+
-          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
-          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>F</div></div>"+
+          "<a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
+          "<a class='4 key'></a><div class='key sharp'><div class='name'>F</div></div>"+
         "</div><div class='octave'>"+
-          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
-          "<a class='4 key'></a><a class='4 key'></a><div class='key sharp'><div class='name'>F</div></div>"+
+          "<a class='4 key'></a><div class='key sharp'><div class='name'>C</div></div>"+
+          "<a class='4 key'></a><div class='key sharp'><div class='name'>F</div></div>"+
         "</div>"+
       "</div>"
     )
