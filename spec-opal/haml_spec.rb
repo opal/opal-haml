@@ -1,5 +1,8 @@
 require 'spec_helper'
-require_tree './fixtures'
+require 'fixtures/simple'
+require 'fixtures/advanced'
+require 'fixtures/html_content'
+require 'fixtures/attributes_helper'
 
 describe "Haml files" do
   let(:simple)            { Template['fixtures/simple'] }
