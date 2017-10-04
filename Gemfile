@@ -3,10 +3,9 @@ gemspec
 gem 'haml', ENV['HAML_VERSION'] || '> 0'
 
 if ENV['OPAL_VERSION'] == 'master'
-  gem 'opal', ENV['OPAL_VERSION'] if ENV['OPAL_VERSION']
-  gem 'opal-rspec', path: '../opal-rspec'
-  gem 'opal', path: '../opal'
-  gem 'opal-sprockets', '0.4.1.0.11.0.rc1.3.1.beta2'
+  gem 'opal', github: 'opal'
+  gem 'opal-rspec', github: 'opal/opal-rspec'
+  gem 'opal-sprockets', github: 'opal/open-sprockets'
 else
   gem 'opal', '~> 0.10.5'
 end
