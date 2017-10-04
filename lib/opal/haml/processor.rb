@@ -1,9 +1,13 @@
 require 'haml'
-require 'sprockets'
+require 'opal-sprockets'
 
 module Opal
   module Haml
-    class Processor < ::Opal::Processor
+    OPAL_SPROCKETS_PROCESSOR = defined?(Opal::Processor) ?
+      ::Opal::Processor :
+      ::Opal::Sprockets::Processor
+
+    class Processor < OPAL_SPROCKETS_PROCESSOR
       self.default_mime_type = 'application/javascript'
 
       def evaluate(context, locals, &block)
@@ -13,7 +17,7 @@ module Opal
 
       def self.compiler_options
         # otherwise would check current class `attr_accessor`s
-        ::Opal::Processor.compiler_options
+        OPAL_SPROCKETS_PROCESSOR.compiler_options
       end
     end
   end
