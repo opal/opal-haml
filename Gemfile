@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gemspec
 gem 'haml', ENV['HAML_VERSION'] || '> 0'
 
-if ENV['OPAL'] == 'master'
+if ENV['OPAL_VERSION'] == 'master'
   gem 'opal', ENV['OPAL_VERSION'] if ENV['OPAL_VERSION']
   gem 'opal-rspec', path: '../opal-rspec'
   gem 'opal', path: '../opal'
