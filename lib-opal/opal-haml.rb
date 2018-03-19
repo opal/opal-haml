@@ -68,7 +68,7 @@ class Template
     end
 
     def _attribute_escape(value)
-      value.to_s.gsub /['"&<>]/, '"' => '&quot;', "'" => '&apos;', '&' => '&amp;', '<' => '&lt;', '>' => '&gt;'
+      value.to_s.gsub(/['"&<>]/, '"' => '&quot;', "'" => '&apos;', '&' => '&amp;', '<' => '&lt;', '>' => '&gt;')
     end
   end
 end
