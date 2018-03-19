@@ -1,3 +1,7 @@
+## 0.4.5 2018-03-19
+
+- Avoid warning from Opal v0.11
+
 ## 0.4.4 2017-05-13
 
 - Improve support for the attribute builder
