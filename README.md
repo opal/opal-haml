@@ -1,4 +1,6 @@
-# opal-haml: Haml templates for opal
+# Opal Haml
+
+*Haml templates for Opal*
 
 [![Build Status](https://travis-ci.org/opal/opal-haml.svg?branch=master)](https://travis-ci.org/opal/opal-haml)
 

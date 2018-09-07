@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version      = Opal::Haml::VERSION
   s.author       = 'Adam Beynon'
   s.email        = 'adam@adambeynon.com'
-  s.homepage     = 'http://opalrb.org'
+  s.homepage     = 'https://github.com/opal/opal-haml#readme'
   s.summary      = 'Run Haml templates client-side with Opal'
   s.description  = 'Run Haml templates client-side with Opal.'
   s.license      = 'MIT'
