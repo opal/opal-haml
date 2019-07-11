@@ -1,3 +1,7 @@
+## 0.4.6 unreleased
+
+- Add support for Opal v1.0
+
 ## 0.4.5 2018-03-19
 
 - Avoid warning from Opal v0.11

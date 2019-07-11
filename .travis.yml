@@ -1,13 +1,16 @@
 language: ruby
 sudo: false
-rvm: 2.3.4
-
+rvm: 2.6.2
 
 env:
-  - HAML_VERSION="~> 4.0" OPAL_VERSION='~> 0.10.0'
-  - HAML_VERSION="~> 5.0" OPAL_VERSION='~> 0.10.0'
-  - HAML_VERSION="~> 5.0" OPAL_VERSION='~> 0.11.0'
-  - HAML_VERSION="~> 5.0" OPAL_VERSION=master
+  - HAML_VERSION="4.0" OPAL_VERSION="0.10"
+  - HAML_VERSION="5.0" OPAL_VERSION="0.10"
+  - HAML_VERSION="4.0" OPAL_VERSION="0.11"
+  - HAML_VERSION="5.0" OPAL_VERSION="0.11"
+  - HAML_VERSION="4.0" OPAL_VERSION="1.0"
+  - HAML_VERSION="5.0" OPAL_VERSION="1.0"
+  - HAML_VERSION="4.0" OPAL_VERSION=master
+  - HAML_VERSION="5.0" OPAL_VERSION=master
 
 cache:
   bundler: true
