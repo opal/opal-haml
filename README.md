@@ -81,7 +81,7 @@ $ bundle exec rackup
 
 (The MIT License)
 
-Copyright (C) 2013 by Adam Beynon
+Copyright (C) 2013 by Adam Beynon, 2015 Elia Schito
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
