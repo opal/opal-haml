@@ -23,10 +23,16 @@ module Opal
   end
 end
 
-if Sprockets.respond_to? :register_transformer
-  extra_args = [{mime_type: 'application/javascript', silence_deprecation: true}]
+if Opal::Sprockets.respond_to? :register_mime_type # Sprockets 4.0 support
+  Sprockets.register_mime_type 'application/html+haml', extensions: ['.haml', '.html.haml']
+  Sprockets.register_transformer 'application/html+haml', 'application/javascript', Opal::Haml::Processor
+  Opal::Sprockets.register_mime_type 'application/html+haml'
 else
-  extra_args = []
-end
+  if Sprockets.respond_to? :register_transformer
+    extra_args = [{mime_type: 'application/javascript', silence_deprecation: true}]
+  else
+    extra_args = []
+  end
 
-Sprockets.register_engine '.haml', Opal::Haml::Processor, *extra_args
+  Sprockets.register_engine '.haml', Opal::Haml::Processor, *extra_args
+end
