@@ -7,6 +7,7 @@ module Opal
 
       def initialize(*args)
         super
+        @filename = ::Opal::Compiler.module_name(@filename)
         @source = prepare(@source, @filename)
       end
 

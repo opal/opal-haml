@@ -9,6 +9,11 @@ gem 'haml', "~> #{haml_version}"
 
 case ENV['OPAL_VERSION']
 
+when 'local'
+  gem 'opal', path: '../opal'
+  gem 'opal-sprockets', path: '../opal-sprockets'
+  gem 'opal-rspec', path: '../opal-rspec'
+
 when 'master'
   gem 'opal', git: github['opal/opal'], branch: :master
   gem 'opal-sprockets', git: github['opal/opal-sprockets']

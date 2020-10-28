@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths  = ['lib']
 
   s.add_dependency 'opal', ['>= 0.10', '< 2']
-  s.add_dependency 'opal-sprockets', '~> 0.4.1'
+  s.add_dependency 'opal-sprockets', '>= 0.5.0'
   s.add_dependency 'haml'
 
   s.add_development_dependency 'opal-rspec'
