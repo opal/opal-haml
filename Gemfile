@@ -3,9 +3,9 @@ gemspec
 
 github = -> repo { "https://github.com/#{repo}" }
 version = -> rs { -> vs { Gem::Requirement.new(rs) === Gem::Version.new(vs) } }
-haml_version = ENV['HAML_VERSION'] || 0
+haml_version = ENV['HAML_VERSION'] ? "~> #{ENV['HAML_VERSION']}" : ">= 0"
 
-gem 'haml', "~> #{haml_version}"
+gem 'haml', haml_version
 
 case ENV['OPAL_VERSION']
 
