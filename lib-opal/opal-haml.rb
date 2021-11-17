@@ -27,6 +27,8 @@ module Haml
             .replace(/[\r\n]/g, '&#13;');
       }
     end
+
+    singleton_class.alias_method :html_escape_without_haml_xss, :html_escape
   end
 end
 
