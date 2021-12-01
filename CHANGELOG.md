@@ -1,4 +1,10 @@
-## 0.4.6 unreleased
+## 0.5.0 2021-12-01
+
+- Compatibility for Haml v5.2
+
+- Support Sprockets 4.0
+
+## 0.4.6 2019-07-13
 
 - Add support for Opal v1.0
 
