@@ -35,4 +35,4 @@ module Opal
   end
 end
 
-Opal.append_path File.expand_path('../../../lib-opal', __FILE__).untaint
+Opal.append_path File.expand_path("#{__dir__}../../../lib-opal")
